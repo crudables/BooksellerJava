@@ -9,17 +9,7 @@ package com.ables.booksellers.model;
  *
  * @author ables
  */
-
-public class Staff extends User{
-
-    public Staff() {
-    }
-
-    public Staff(String firstName,String lastName, String username, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.password = password;
-    }
+public class Staff extends Users{
+    int id;
     
 }

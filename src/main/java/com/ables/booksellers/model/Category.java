@@ -7,7 +7,10 @@ package com.ables.booksellers.model;
 
 import java.io.Serializable;
 import java.time.Clock;
+import java.time.LocalDateTime;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -16,9 +19,28 @@ import javax.persistence.Id;
  */
 @Entity
 public class Category implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    int id;
     private String name;
-    private Clock createdDate;
-    private Clock updatedDate;
+    private LocalDateTime createdDate;
+    private LocalDateTime updatedDate;
+
+    public Category(){
+    super();
+    }
+    
+    public Category(String name) {
+        
+        super();
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+    
+    
 
     public String getName() {
         return name;
@@ -28,19 +50,19 @@ public class Category implements Serializable{
         this.name = name;
     }
 
-    public Clock getCreatedDate() {
+    public LocalDateTime getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Clock createdDate) {
+    public void setCreatedDate(LocalDateTime createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Clock getUpdatedDate() {
+    public LocalDateTime getUpdatedDate() {
         return updatedDate;
     }
 
-    public void setUpdatedDate(Clock updatedDate) {
+    public void setUpdatedDate(LocalDateTime updatedDate) {
         this.updatedDate = updatedDate;
     }
 }

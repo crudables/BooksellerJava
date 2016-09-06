@@ -8,6 +8,8 @@ package com.ables.booksellers.model;
 import java.io.Serializable;
 import java.util.Map;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -15,11 +17,20 @@ import javax.persistence.Id;
  * @author ables
  */
 @Entity
-public class Cart implements Serializable{
+public class Cart implements Serializable {
+
     @Id
-    private Integer id;
-    private Map<String , Book> map;
-    
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private Map<String, Book> map;
+
+    public Cart(){
+    super();
+    }
+    public Cart(Map<String, Book> map) {
+        super();
+        this.map = map;
+    }
 
 //    public Cart(){
 //    map = new HashMap();
@@ -79,7 +90,6 @@ public class Cart implements Serializable{
 //        
 //        return totalPrice;
 //    }
-
     public Integer getId() {
         return id;
     }
@@ -87,15 +97,12 @@ public class Cart implements Serializable{
 //    public void setId(Integer id) {
 //        this.id = id;
 //    }
-
-    public Map<String , Book> getMap() {
+    public Map<String, Book> getMap() {
         return map;
     }
 
-    public void setMap(Map<String , Book> map) {
+    public void setMap(Map<String, Book> map) {
         this.map = map;
     }
-    
-    
-    
+
 }

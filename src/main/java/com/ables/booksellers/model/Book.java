@@ -7,7 +7,10 @@ package com.ables.booksellers.model;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -16,12 +19,15 @@ import javax.persistence.Id;
  */
 @Entity
 public class Book implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    int id;
     private String title;
     private String author;
-    @Id
+    @Column(unique = true)
     private String isbn;
     private String publisher;
-    private String language;
+    private String lang;
     private double price;
     private double oldPrice;
     private boolean active;
@@ -67,11 +73,11 @@ public class Book implements Serializable{
     }
 
     public String getLanguage() {
-        return language;
+        return lang;
     }
 
     public void setLanguage(String language) {
-        this.language = language;
+        this.lang = language;
     }
 
     public double getPrice() {
