@@ -21,7 +21,7 @@ public class Cart implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     private Map<String, Book> map;
 
     public Cart(){
@@ -90,7 +90,7 @@ public class Cart implements Serializable {
 //        
 //        return totalPrice;
 //    }
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

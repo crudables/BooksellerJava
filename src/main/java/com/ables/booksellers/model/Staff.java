@@ -51,13 +51,10 @@ public class Staff extends Users {
         this.address = address;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    private void setId(int id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;

@@ -49,7 +49,7 @@ public class Customer extends Users{
         this.address = address;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
     

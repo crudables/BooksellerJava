@@ -19,7 +19,7 @@ import javax.persistence.Id;
 public class Users implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    Long id;
   protected   String firstName;
    protected String lastName;
    protected String username;

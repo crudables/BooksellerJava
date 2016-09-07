@@ -16,9 +16,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 /**
  *
@@ -28,7 +26,7 @@ import javax.persistence.OneToMany;
 public class Book implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private Long id;
     private String title;
     private String author;
     @Column(unique = true)
@@ -46,7 +44,7 @@ public class Book implements Serializable{
     private int quantityOrdered;
     private int quantityInStock;
     private int quantityInCart;
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "books")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "books",fetch = FetchType.LAZY)
     private Set<Category> category = new HashSet<>();
     public String getTitle() {
         return title;
@@ -196,6 +194,10 @@ public class Book implements Serializable{
 
     public void setLang(String lang) {
         this.lang = lang;
+    }
+
+    public Long getId() {
+        return id;
     }
     
     

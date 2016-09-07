@@ -20,7 +20,7 @@ import javax.persistence.Id;
 public class Address implements Serializable{
     @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     @Column(unique = true)
     private String email;
     private String homeAddress;
@@ -48,13 +48,10 @@ public class Address implements Serializable{
         this.email = email;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    private void setId(int id) {
-        this.id = id;
-    }
 
     public String getHomeAddress() {
         return homeAddress;
