@@ -5,11 +5,31 @@
  */
 package com.ables.booksellers.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author ables
  */
-public class Staff extends Users{
+@Entity
+public class Staff extends Users {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
+    String staffId;
+
+    public Staff(){}
+    public Staff(String staffId,String firstName,String lastName,String username, String password) {
+        this.staffId = staffId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+    }
+    String nextOfKin;
+    
     
 }
