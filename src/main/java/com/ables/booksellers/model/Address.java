@@ -39,6 +39,11 @@ public class Address implements Serializable{
     this.mobilePhone = mobile;
     this.homeAddress = homeAddress;
     }
+
+    @Override
+    public String toString() {
+        return "Address{" + "email=" + email + ", mobilePhone=" + mobilePhone + '}';
+    }
     
     public String getEmail() {
         return email;
@@ -100,5 +105,37 @@ public class Address implements Serializable{
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
+    @Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Address other = (Address) obj;
+	if (id == null) {
+		if (other.id != null)
+			return false;
+	} else if (!id.equals(other.id))
+		return false;
+	if (email == null) {
+		if (other.email != null)
+			return false;
+	} else if (!email.equals(other.email))
+		return false;
+	return true;
+}
+
+    @Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((id == null) ? 0 : id.hashCode());
+	result = prime * result + ((mobilePhone == null) ? 0 : mobilePhone.hashCode());
+        result = prime * result + ((email == null) ? 0: email.hashCode());
+	return result;
+}
     
 }

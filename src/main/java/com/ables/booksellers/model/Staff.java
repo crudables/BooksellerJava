@@ -6,6 +6,7 @@
 package com.ables.booksellers.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 /**
@@ -14,9 +15,12 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class Staff extends Users {
+    @Id
+    Long id;
     String staffId;
     public Staff(){}
     public Staff(String staffId,String firstName,String lastName,String username, String password) {
+        
         this.staffId = staffId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -87,6 +91,42 @@ public class Staff extends Users {
     public void setPassword(String password) {
         this.password = password;
     }
+
+       @Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Staff other = (Staff) obj;
+	if (id == null) {
+		if (other.id != null)
+			return false;
+	} else if (!id.equals(other.id))
+		return false;
+	if (username == null) {
+		if (other.username != null)
+			return false;
+	} else if (!username.equals(other.username))
+		return false;
+        if(staffId == null){
+            if(other.staffId != null)
+                return false;
+        }
+        else if(! staffId.equals(other.staffId))
+            return false;
+	return true;
+}
     
-    
+  @Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((id == null) ? 0 : id.hashCode());
+	result = prime * result + ((username == null) ? 0 : username.hashCode());
+        result = prime * result + ((staffId == null) ? 0: staffId.hashCode());
+	return result;
+}
 }
