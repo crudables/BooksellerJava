@@ -6,16 +6,23 @@
 package com.ables.booksellers.model;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author ables
  */
+@Entity
 public class Users implements Serializable{
-    
-  public   String firstName;
-   public String lastName;
-   public String username;
-  public String password;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    int id;
+  protected   String firstName;
+   protected String lastName;
+   protected String username;
+  protected String password;
  
 }

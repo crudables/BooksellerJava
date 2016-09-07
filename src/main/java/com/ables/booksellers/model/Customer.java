@@ -5,11 +5,9 @@
  */
 package com.ables.booksellers.model;
 
-import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -17,14 +15,10 @@ import javax.persistence.OneToOne;
  *
  * @author ables
  */
-@Entity
 public class Customer extends Users{
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @OneToMany(targetEntity = Address.class)
-    private List address;
-     @OneToOne
+    @OneToMany(targetEntity = Address.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set address;
+     @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
     private Cart cart;
 
     public Customer() {
@@ -46,11 +40,12 @@ public class Customer extends Users{
         this.cart = cart;
     }
 
-    public List getAddress() {
+    public Set getAddress() {
         return address;
     }
 
-    public void setAddress(List address) {
+    public void setAddress(Set address) {
+        address = new HashSet();
         this.address = address;
     }
 

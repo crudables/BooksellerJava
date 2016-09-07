@@ -20,25 +20,40 @@ import javax.persistence.Id;
 public class Address implements Serializable{
     @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
     @Column(unique = true)
     private String email;
     private String homeAddress;
     private String officeAddress;
+    @Column(unique = true)
     private String mobilePhone;
     private String country;
-
-    public Address() {
-    }
     private String postalCode;
     private String telephone;
 
+    public Address() {
+    }
+    
+    public Address(String email, String mobile, String homeAddress){
+    this.email = email;
+    this.mobilePhone = mobile;
+    this.homeAddress = homeAddress;
+    }
+    
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    private void setId(int id) {
+        this.id = id;
     }
 
     public String getHomeAddress() {

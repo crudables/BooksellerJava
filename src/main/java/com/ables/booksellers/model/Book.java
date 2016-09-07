@@ -7,11 +7,18 @@ package com.ables.booksellers.model;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -39,7 +46,8 @@ public class Book implements Serializable{
     private int quantityOrdered;
     private int quantityInStock;
     private int quantityInCart;
-
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "books")
+    private Set<Category> category = new HashSet<>();
     public String getTitle() {
         return title;
     }
@@ -172,6 +180,22 @@ public class Book implements Serializable{
 
     public void setQuantityInCart(int quantityInCart) {
         this.quantityInCart = quantityInCart;
+    }
+
+    public Set<Category> getCategory() {
+        return category;
+    }
+
+    public void setCategory(Set<Category> category) {
+        this.category = category;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
     }
     
     
