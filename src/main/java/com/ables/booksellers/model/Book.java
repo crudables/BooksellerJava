@@ -46,6 +46,18 @@ public class Book implements Serializable{
     private int quantityInCart;
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "books",fetch = FetchType.LAZY)
     private Set<Category> category = new HashSet<>();
+
+    public Book() {
+    }
+
+    public Book(String title, String author, String isbn) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+    }
+    
+    
+    
     public String getTitle() {
         return title;
     }

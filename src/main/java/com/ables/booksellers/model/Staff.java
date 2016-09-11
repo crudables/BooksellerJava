@@ -6,7 +6,6 @@
 package com.ables.booksellers.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 /**
@@ -15,8 +14,7 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class Staff extends Users {
-    @Id
-    Long id;
+  
     String staffId;
     public Staff(){}
     public Staff(String staffId,String firstName,String lastName,String username, String password) {

@@ -29,6 +29,7 @@ public class Category implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Category_id")
     Long id;
+    @Column(unique = true)
     private String name;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;

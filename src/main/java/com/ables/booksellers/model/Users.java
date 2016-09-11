@@ -6,6 +6,7 @@
 package com.ables.booksellers.model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Users implements Serializable{
   protected   String firstName;
    protected String lastName;
    protected String username;
+   @Column(unique = true)
   protected String password;
  
 }
