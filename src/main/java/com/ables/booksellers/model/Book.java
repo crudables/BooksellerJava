@@ -220,16 +220,16 @@ public boolean equals(Object obj) {
 		return false;
 	if (getClass() != obj.getClass())
 		return false;
-	Staff other = (Staff) obj;
+	Book other = (Book) obj;
 	if (id == null) {
 		if (other.id != null)
 			return false;
 	} else if (!id.equals(other.id))
 		return false;
 	if (isbn == null) {
-		if (other.username != null)
+		if (other.title != null)
 			return false;
-	} else if (!isbn.equals(other.username))
+	} else if (!isbn.equals(other.getTitle()))
 		return false;
 	return true;
 }

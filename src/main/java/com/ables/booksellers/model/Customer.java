@@ -5,9 +5,15 @@
  */
 package com.ables.booksellers.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -15,7 +21,17 @@ import javax.persistence.OneToOne;
  *
  * @author ables
  */
-public class Customer extends Users{
+@Entity
+public class Customer implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+   private Long id;
+     private String firstName;
+    private String lastName;
+    private String username;
+   @Column(unique = true)
+   private String password;
+    
     @OneToMany(targetEntity = Address.class, cascade = CascadeType.ALL, orphanRemoval = true)
     private Set address;
      @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
@@ -69,9 +85,9 @@ public boolean equals(Object obj) {
 	} else if (!id.equals(other.id))
 		return false;
 	if (username == null) {
-		if (other.username != null)
+		if (other.getUsername() != null)
 			return false;
-	} else if (!username.equals(other.username))
+	} else if (!username.equals(other.getUsername()))
 		return false;
 	return true;
 }
@@ -84,4 +100,36 @@ public int hashCode() {
 	result = prime * result + ((username == null) ? 0 : username.hashCode());
 	return result;
 }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

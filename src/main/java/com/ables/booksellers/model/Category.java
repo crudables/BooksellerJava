@@ -93,16 +93,16 @@ public boolean equals(Object obj) {
 		return false;
 	if (getClass() != obj.getClass())
 		return false;
-	Staff other = (Staff) obj;
+	Category other = (Category) obj;
 	if (id == null) {
 		if (other.id != null)
 			return false;
 	} else if (!id.equals(other.id))
 		return false;
 	if (name == null) {
-		if (other.username != null)
+		if (other.getName() != null)
 			return false;
-	} else if (!name.equals(other.username))
+	} else if (!name.equals(other.getName()))
 		return false;
 	return true;
 }

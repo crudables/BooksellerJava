@@ -5,7 +5,12 @@
  */
 package com.ables.booksellers.model;
 
+import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 /**
@@ -13,9 +18,18 @@ import javax.persistence.OneToOne;
  * @author ables
  */
 @Entity
-public class Staff extends Users {
-  
-    String staffId;
+public class Staff implements Serializable{
+    
+  @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
+   private  String firstName;
+   private String lastName;
+   @Column(unique = true)
+   private String username;
+   private String password;
+   @Column(unique = true)
+   private String staffId;
     public Staff(){}
     public Staff(String staffId,String firstName,String lastName,String username, String password) {
         

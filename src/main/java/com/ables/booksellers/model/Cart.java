@@ -6,11 +6,13 @@
 package com.ables.booksellers.model;
 
 import java.io.Serializable;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,14 +24,16 @@ public class Cart implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Map<String, Book> map;
-
+//    @MapKey()
+//    private Map<String, Book> map = new HashMap<>();
+    @OneToMany(targetEntity = Book.class)
+    private List<Book> cart = new ArrayList<>();
     public Cart(){
     super();
     }
-    public Cart(Map<String, Book> map) {
+    public Cart(List cart) {
         super();
-        this.map = map;
+        cart = new ArrayList<>();
     }
 
 //    public Cart(){
@@ -97,14 +101,6 @@ public class Cart implements Serializable {
 //    public void setId(Integer id) {
 //        this.id = id;
 //    }
-    public Map<String, Book> getMap() {
-        return map;
-    }
-
-    public void setMap(Map<String, Book> map) {
-        this.map = map;
-    }
-
     
       @Override
 public int hashCode() {
@@ -130,4 +126,12 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
+
+    public List<Book> getCart() {
+        return cart;
+    }
+
+    public void setCart(List<Book> cart) {
+        this.cart = cart;
+    }
 }

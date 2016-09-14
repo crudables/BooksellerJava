@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ables.bookseller.repo;
+package com.ables.booksellers.repo;
 
-import com.ables.booksellers.model.Cart;
+import com.ables.booksellers.model.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author ables
  */
 @Repository
-public interface CartRepository extends CrudRepository<Cart, Long>{
-    public Cart findById(Long id);
+public interface CategoryRepository extends CrudRepository<Category, Long>{
+    public Category findById(Long id);
+    public Category findByName(String name);
 }
