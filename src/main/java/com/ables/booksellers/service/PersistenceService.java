@@ -5,10 +5,14 @@
  */
 package com.ables.booksellers.service;
 
+import com.ables.booksellers.model.Address;
+import com.ables.booksellers.model.Customer;
+
 /**
  *
  * @author ables
  */
 public interface PersistenceService {
-    
+    public Customer saveCustomer(Customer customer);
+//    public Address saveAdd(Address address);
 }

@@ -17,12 +17,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author ables
  */
 @Entity
+@Component("book")
 public class Book implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

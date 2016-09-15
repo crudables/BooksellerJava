@@ -13,11 +13,13 @@ import javax.servlet.ServletRegistration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  *
  * @author ables
  */
+@EnableWebMvc
 public class WebInit implements WebApplicationInitializer{
 
     @Override
@@ -29,7 +31,6 @@ public class WebInit implements WebApplicationInitializer{
         Objects.requireNonNull(dispatcher, "Dispatcher cannot be null");
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/*");
-        System.out.println("dddddddddddddddddd");
     }
     
     

@@ -18,12 +18,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author ables
  */
 @Entity
+@Component("category")
 public class Category implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -13,12 +13,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author ables
  */
 @Entity
+@Component("cart")
 public class Cart implements Serializable {
 
     @Id

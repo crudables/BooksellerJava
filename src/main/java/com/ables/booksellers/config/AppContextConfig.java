@@ -5,8 +5,8 @@
  */
 package com.ables.booksellers.config;
 
+import com.ables.booksellers.service.PersistenceServiceImpl;
 import com.jolbox.bonecp.BoneCPDataSource;
-import com.vaadin.spring.annotation.EnableVaadin;
 import java.util.Properties;
 import javax.persistence.EntityManagerFactory;
 import org.springframework.context.annotation.Bean;
@@ -19,16 +19,12 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
  *
  * @author ables
  */
 @Configuration
-@EnableVaadin
 @ComponentScan(basePackages = {"com.ables.booksellers"})
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"com.ables.booksellers.repo"})
@@ -82,4 +78,9 @@ public BoneCPDataSource getDataSource() {
       properties.setProperty("hibernate.show_sql", "true");
       return properties;
    }
+    
+    @Bean
+    public PersistenceServiceImpl getPersist(){
+    return new PersistenceServiceImpl();
+    }
 }

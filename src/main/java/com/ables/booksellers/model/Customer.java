@@ -6,8 +6,8 @@
 package com.ables.booksellers.model;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,12 +16,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author ables
  */
 @Entity
+@Component("customer")
 public class Customer implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,7 +35,7 @@ public class Customer implements Serializable{
    private String password;
     
     @OneToMany(targetEntity = Address.class, cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set address;
+    private List<Address> address = new ArrayList<>();
      @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
     private Cart cart;
 
@@ -56,12 +58,11 @@ public class Customer implements Serializable{
         this.cart = cart;
     }
 
-    public Set getAddress() {
+    public List getAddress() {
         return address;
     }
 
-    public void setAddress(Set address) {
-        address = new HashSet();
+    public void setAddress(List address) {
         this.address = address;
     }
 

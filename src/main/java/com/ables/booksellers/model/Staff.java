@@ -12,12 +12,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author ables
  */
 @Entity
+@Component("staff")
 public class Staff implements Serializable{
     
   @Id
