@@ -20,7 +20,6 @@ import org.springframework.stereotype.Component;
  * @author ables
  */
 @Entity
-@Component("cart")
 public class Cart implements Serializable {
 
     @Id

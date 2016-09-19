@@ -19,7 +19,6 @@ import org.springframework.stereotype.Component;
  * @author ables
  */
 @Entity
-@Component("staff")
 public class Staff implements Serializable{
     
   @Id

@@ -25,7 +25,9 @@ public class WebInit implements WebApplicationInitializer{
     @Override
     public void onStartup(ServletContext sc) throws ServletException {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.scan(WebApplicationInitializer.class.getPackage().getName());
+        context.scan(this.getClass().getPackage().getName());
+//        context.refresh();
+        context.setConfigLocation(this.getClass().getPackage().getName());
         sc.addListener(new ContextLoaderListener(context));
         ServletRegistration.Dynamic dispatcher = sc.addServlet("vaadin", SpringVaadinServlet.class);
         Objects.requireNonNull(dispatcher, "Dispatcher cannot be null");

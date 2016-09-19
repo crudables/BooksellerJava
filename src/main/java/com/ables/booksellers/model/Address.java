@@ -18,7 +18,6 @@ import org.springframework.stereotype.Component;
  * @author ables
  */
 @Entity
-@Component("address")
 public class Address implements Serializable{
     @Id
      @GeneratedValue(strategy = GenerationType.AUTO)

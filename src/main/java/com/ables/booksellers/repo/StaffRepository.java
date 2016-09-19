@@ -16,11 +16,12 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface StaffRepository extends CrudRepository<Staff, Long>{
-    public List<Staff> findByFirstName(String firstName);
+     public List<Staff> findByFirstName(String firstName);
     public List<Staff> findByLastName(String lastName);
     public List<Staff> findByfirstNameAndLastName(String firstName, String lastName);
-    public Staff findByStaffId(String staffId);
+    public Staff findById(String staffId);
     public Staff findByUsername(String username);
+    
     
     
 }

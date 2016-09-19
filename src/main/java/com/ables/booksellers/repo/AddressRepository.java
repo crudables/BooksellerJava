@@ -6,8 +6,8 @@
 package com.ables.booksellers.repo;
 
 import com.ables.booksellers.model.Address;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -15,12 +15,12 @@ import org.springframework.stereotype.Repository;
  * @author ables
  */
 @Repository
-@Component("addressRepository")
 public interface AddressRepository extends CrudRepository<Address, Long>{
-    public Address findByMobilePhone(String mobilePhone);
-    public Address findByEmail(String email);
+    
+     public List<Address> findByMobilePhone(String mobilePhone);
+    public List<Address> findByEmail(String email);
     public Address findById(Long id);
     public Address findByMobilePhoneAndEmailAndHomeAddress(String mobilePhone, String email, String homeAddress);
-    
+   
     
 }

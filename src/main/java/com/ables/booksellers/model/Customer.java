@@ -23,7 +23,6 @@ import org.springframework.stereotype.Component;
  * @author ables
  */
 @Entity
-@Component("customer")
 public class Customer implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

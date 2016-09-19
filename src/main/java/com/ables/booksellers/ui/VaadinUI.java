@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
  * @author ables
  */
 @Component
-//@SpringUI()
+@SpringUI
 @Theme("valo")
 public class VaadinUI extends UI{
     
@@ -149,7 +149,6 @@ public class VaadinUI extends UI{
         Customer cus = new Customer(firstName, lastName, username, password);
         Address add = new Address(email, mobilePhone, homAdd);
         cus.getAddress().add(add);
-        psi.saveCustomer(cus);
         System.out.println("got here");
                 
     

@@ -24,7 +24,6 @@ import org.springframework.stereotype.Component;
  * @author ables
  */
 @Entity
-@Component("book")
 public class Book implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
