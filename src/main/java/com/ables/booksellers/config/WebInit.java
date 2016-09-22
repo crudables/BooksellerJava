@@ -5,7 +5,6 @@
  */
 package com.ables.booksellers.config;
 
-import com.vaadin.spring.server.SpringVaadinServlet;
 import java.util.Objects;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -13,6 +12,7 @@ import javax.servlet.ServletRegistration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
@@ -29,7 +29,7 @@ public class WebInit implements WebApplicationInitializer{
 //        context.refresh();
         context.setConfigLocation(this.getClass().getPackage().getName());
         sc.addListener(new ContextLoaderListener(context));
-        ServletRegistration.Dynamic dispatcher = sc.addServlet("vaadin", SpringVaadinServlet.class);
+        ServletRegistration.Dynamic dispatcher = sc.addServlet("dispatcherservlet", new DispatcherServlet(context));
         Objects.requireNonNull(dispatcher, "Dispatcher cannot be null");
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/*");

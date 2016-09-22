@@ -5,7 +5,6 @@
  */
 package com.ables.booksellers.config;
 
-import com.ables.booksellers.service.PersistenceServiceImpl;
 import com.jolbox.bonecp.BoneCPDataSource;
 import java.util.Properties;
 import javax.persistence.EntityManagerFactory;
@@ -19,6 +18,9 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
  *
@@ -28,15 +30,15 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = {"com.ables.booksellers"})
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"com.ables.booksellers.repo"})
-public class AppContextConfig{
+public class AppContextConfig extends WebMvcConfigurerAdapter{
     
-//    @Bean(name = "viewResolver")
-//public InternalResourceViewResolver getViewResolver() {
-//    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-//    viewResolver.setPrefix("/WEB-INF/views/jsp/");
-//    viewResolver.setSuffix(".jsp");
-//    return viewResolver;
-//}
+    @Bean(name = "viewResolver")
+public InternalResourceViewResolver getViewResolver() {
+    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+    viewResolver.setPrefix("/WEB-INF/views/jsp/");
+    viewResolver.setSuffix(".jsp");
+    return viewResolver;
+}
 
 @Bean(destroyMethod = "close")
 public BoneCPDataSource getDataSource() {
@@ -73,10 +75,16 @@ public BoneCPDataSource getDataSource() {
    @Bean
    public Properties additionalProperties() {
       Properties properties = new Properties();
-      properties.setProperty("hibernate.hbm2ddl.auto", "create");
+      properties.setProperty("hibernate.hbm2ddl.auto", "update");
       properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL82Dialect");
       properties.setProperty("hibernate.show_sql", "true");
       return properties;
    }
     
+   
+   @Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/resources/**")
+                        .addResourceLocations("/resources/");
+}
 }

@@ -11,8 +11,6 @@ import com.ables.booksellers.model.Cart;
 import com.ables.booksellers.model.Category;
 import com.ables.booksellers.model.Customer;
 import com.ables.booksellers.model.Staff;
-import java.text.SimpleDateFormat;
-import java.util.List;
 
 /**
  *

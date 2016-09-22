@@ -123,32 +123,7 @@
     <artifactId>spring-data-jpa</artifactId>
     <version>1.10.2.RELEASE</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/com.vaadin/vaadin-server -->
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-server</artifactId>
-    <version>7.7.0</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/com.vaadin/vaadin-themes -->
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-themes</artifactId>
-    <version>7.7.0</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/com.vaadin/vaadin-spring -->
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-spring</artifactId>
-    <version>1.0.1</version>
-</dependency>
-<dependency>
-        <groupId>com.vaadin</groupId>
-        <artifactId>vaadin-client-compiled</artifactId>
-        <version>7.7.0</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.vaadin/vaadin-themes -->
-    
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 
 
     </dependencies>
