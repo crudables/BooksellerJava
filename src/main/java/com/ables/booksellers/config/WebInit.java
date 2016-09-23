@@ -32,7 +32,7 @@ public class WebInit implements WebApplicationInitializer{
         ServletRegistration.Dynamic dispatcher = sc.addServlet("dispatcherservlet", new DispatcherServlet(context));
         Objects.requireNonNull(dispatcher, "Dispatcher cannot be null");
         dispatcher.setLoadOnStartup(1);
-        dispatcher.addMapping("/*");
+        dispatcher.addMapping("/");
     }
     
     

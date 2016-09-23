@@ -16,12 +16,19 @@ import org.springframework.web.servlet.ModelAndView;
  * @author ables
  */
 @Controller
-@RequestMapping(value = "/")
+@RequestMapping("/")
 public class IndexController {
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String showIndex(ModelMap mm) {
-        System.out.println("in the controlller now?");
-        mm.addAttribute("name", "my name");
-        return "index";
+    
+    @RequestMapping(value = "/")
+    public ModelAndView showIndex() {
+        ModelAndView mv = new ModelAndView("index");
+        mv.setViewName("index");
+        System.out.println("in the controller nowwww?");
+        return mv;
+    }
+    @RequestMapping("/index")
+    public ModelAndView home(){
+    ModelAndView mv = new ModelAndView("home");
+    return mv;
     }
 }
