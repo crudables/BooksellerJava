@@ -21,6 +21,7 @@ public interface StaffRepository extends CrudRepository<Staff, Long>{
     public List<Staff> findByfirstNameAndLastName(String firstName, String lastName);
     public Staff findById(String staffId);
     public Staff findByUsername(String username);
+//    public List<Staff> findAllStaff();
     
     
     

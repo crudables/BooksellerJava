@@ -5,11 +5,13 @@
  */
 package com.ables.booksellers.controller;
 
+import com.ables.booksellers.model.Book;
+import com.ables.booksellers.service.PersistenceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
@@ -18,17 +20,16 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/")
 public class IndexController {
-    
+    @Autowired
+    PersistenceService ps;
     @RequestMapping(value = "/")
-    public ModelAndView showIndex() {
-        ModelAndView mv = new ModelAndView("index");
-        mv.setViewName("index");
+    public String showIndex(ModelMap map) {
+//        ModelAndView mv = new ModelAndView("index");
+//        mv.setViewName("index");
         System.out.println("in the controller nowwww?");
-        return mv;
+        return "admin/admin";
     }
-    @RequestMapping("/index")
-    public ModelAndView home(){
-    ModelAndView mv = new ModelAndView("home");
-    return mv;
+    public String newBook(@ModelAttribute()Book book,ModelMap map){
+    return "";
     }
 }

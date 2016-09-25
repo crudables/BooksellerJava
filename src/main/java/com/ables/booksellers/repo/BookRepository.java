@@ -25,5 +25,6 @@ public interface BookRepository extends CrudRepository<Book, Long>{
  public Book findByIsbn(String isbn);
  public List<Book> findByReleaseDate(SimpleDateFormat date);
  public List<Book> findByCategory(String category);
+// public List<Book> findAllBooks();
  
 } 

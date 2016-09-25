@@ -6,6 +6,7 @@
 package com.ables.booksellers.repo;
 
 import com.ables.booksellers.model.Cart;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +17,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CartRepository extends CrudRepository<Cart, Long>{
      public Cart findById(Long id);
+//     public List<Cart> findAllCart();
 
 }

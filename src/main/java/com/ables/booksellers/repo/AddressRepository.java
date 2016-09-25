@@ -21,6 +21,7 @@ public interface AddressRepository extends CrudRepository<Address, Long>{
     public List<Address> findByEmail(String email);
     public Address findById(Long id);
     public Address findByMobilePhoneAndEmailAndHomeAddress(String mobilePhone, String email, String homeAddress);
+//    public List<Address> findAllAdd();
    
     
 }

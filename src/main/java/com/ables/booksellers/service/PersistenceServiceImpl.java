@@ -73,6 +73,10 @@ public class PersistenceServiceImpl implements PersistenceService{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    
+    public List<Staff> fetchAllStaff(){
+    return (List<Staff>)staffRepository.findAll();
+    }
     //customer
     
     public List<Customer> findCustomerByFirstName(String name){
@@ -97,6 +101,10 @@ public class PersistenceServiceImpl implements PersistenceService{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public List<Customer> fetchAllCustomer(){
+    return (List<Customer>)customerRepository.findAll();
+    }
+    
     //category
     
     public Category findCatById(Long id){
@@ -117,6 +125,10 @@ public class PersistenceServiceImpl implements PersistenceService{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    
+    public List<Category> fetchAllCategory(){
+    return (List<Category>)categoryRepository.findAll();
+    }
     //Cart
     
     public Cart findCartById(Long id){
@@ -133,7 +145,9 @@ public class PersistenceServiceImpl implements PersistenceService{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
+    public List<Cart> fetchAllCart(){
+    return (List<Cart>) cartRepository.findAll();
+    }
     //book
     
     public Book findBookById(Long id){
@@ -174,6 +188,10 @@ public class PersistenceServiceImpl implements PersistenceService{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public List<Book> fetchAllBook(){
+    return (List<Book>)bookRepository.findAll();
+    }
+    
     //Address
     
     public List<Address> findAddByPhone(String phone){
@@ -200,6 +218,10 @@ public class PersistenceServiceImpl implements PersistenceService{
     @Override
     public Address editAddress(Address address) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public List<Address> fetchAllAdd(){
+    return  (List<Address>)addressRepository.findAll();
     }
     
     

@@ -87,14 +87,28 @@ public BoneCPDataSource getDataSource() {
    }
     
 //   
-//   @Override
-//	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//		registry.addResourceHandler("/resources/**")
-//                        .addResourceLocations("/resources/");
-//}
+   @Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/resources/**")
+                        .addResourceLocations("/resources/");
+}
         
         @Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
+        
+//         @Bean
+//    public TilesConfigurer tilesConfigurer(){
+//        TilesConfigurer tilesConfigurer = new TilesConfigurer();
+//        tilesConfigurer.setDefinitions(new String[] {"/WEB-INF/views/**/tiles.xml"});
+//        tilesConfigurer.setCheckRefresh(true);
+//        return tilesConfigurer;
+//    }
+//    
+//     @Override
+//    public void configureViewResolvers(ViewResolverRegistry registry) {
+//        TilesViewResolver viewResolver = new TilesViewResolver();
+//        registry.viewResolver(viewResolver);
+//    }
 }

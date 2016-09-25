@@ -6,6 +6,7 @@
 package com.ables.booksellers.repo;
 
 import com.ables.booksellers.model.Category;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -17,5 +18,6 @@ import org.springframework.stereotype.Repository;
 public interface CategoryRepository extends CrudRepository<Category, Long>{
   public Category findById(Long id);
     public Category findByName(String name);
+//    public List<Category> findAllCategory();
     
 }
