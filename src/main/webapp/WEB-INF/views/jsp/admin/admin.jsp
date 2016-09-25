@@ -4,6 +4,7 @@
     Author     : ables
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,8 @@
     <body>
         <div>
             <div>
-            <a href="#">Add new book</a> 
+                <c:url var="newbook" value="/newBook.jsp"/>
+                <a href="${newbook}">Add new book</a> 
             <a href="#">Delete Book</a>
             <a href="#">All Books</a>
             </div>

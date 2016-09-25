@@ -19,7 +19,10 @@
                         <form:label path="title">Title</form:label>
                         <form:input path="title"/>
                     </div>
-                    
+                    <div>
+                        <form:label path="author">Author</form:label>
+                        <form:input path="author" />
+                    </div>
                 </form:form>
             </div>
         </div>
