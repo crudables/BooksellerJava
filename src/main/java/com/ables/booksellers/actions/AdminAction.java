@@ -15,12 +15,21 @@ import org.apache.struts2.convention.annotation.ResultPath;
  *
  * @author ables
  */
-@Namespace("/")
+@Namespace("/admin")
 @ResultPath("/WEB-INF/views/jsp/")
 public class AdminAction extends ActionSupport{
  
-    @Action("newbook",results = {@Result("success")})
+    @Action(value="admin", results={
+		@Result(name="success",location="/adminadmin.jsp")
+	})
     public String showpage(){
+    return "";
+    }
     
+    @Action(value="newbook", results={
+		@Result(name="success",location="admin/newbook.jsp")
+	})
+    public String newbook(){
+    return "success";
     }
 }
