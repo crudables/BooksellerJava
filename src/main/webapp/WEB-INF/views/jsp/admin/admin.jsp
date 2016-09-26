@@ -16,7 +16,7 @@
         <div>
             <div>
                 <c:url var="newbook" value="/newBook.jsp"/>
-                <a href="${newbook}">Add new book</a> 
+                <a href="newbook">Add new book</a> 
             <a href="#">Delete Book</a>
             <a href="#">All Books</a>
             </div>
