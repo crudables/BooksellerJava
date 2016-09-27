@@ -6,7 +6,7 @@
 package com.ables.booksellers.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.ResultPath;
 
@@ -14,9 +14,13 @@ import org.apache.struts2.convention.annotation.ResultPath;
  *
  * @author ables
  */
-@Namespace("/")
+//@Action(value = "/")
 @ResultPath("/WEB-INF/views/jsp/")
 @Result(name = "success",location = "home.jsp")
-public class IndexAction extends ActionSupport{
-    
+public class HomeAction extends ActionSupport{
+    @Action(value = "/")
+ public String show(){
+        System.out.println("print this");
+ return SUCCESS;
+ }   
 }
