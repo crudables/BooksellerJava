@@ -15,16 +15,11 @@ import org.apache.struts2.convention.annotation.ResultPath;
  * @author ables
  */
 @ResultPath("/WEB-INF/views/jsp/admin/")
-@Result(name = "success", location = "newbook.jsp")
-public class NewBookAction extends ActionSupport{
- private String type;
-    
-    @Action("/newbook")
-    public String newbook(){
+@Result(name = "success",location = "category.jsp")
+public class NewcatAction extends ActionSupport{
+    @Action()
+    public String newCat(){
+        System.out.println("Shiud register new cat");
     return SUCCESS;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 }

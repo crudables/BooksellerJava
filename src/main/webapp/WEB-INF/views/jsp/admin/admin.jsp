@@ -4,7 +4,7 @@
     Author     : ables
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib  uri="/struts-tags" prefix="s" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,10 +15,13 @@
     <body>
         <div>
             <div>
-                <c:url var="newbook" value="/newBook.jsp"/>
-                <a href="newbook">Add new book</a> 
-            <a href="#">Delete Book</a>
-            <a href="#">All Books</a>
+                <ol>
+                    <li>
+                        <s:url action="newBook.action" var="newbook"/>
+                        <s:set var=
+                        <s:a href="%{newbook}">New Book</s:a>
+                    </li>
+                </ol>
             </div>
         </div>
     </body>

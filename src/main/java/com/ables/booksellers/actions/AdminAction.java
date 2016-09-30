@@ -7,7 +7,6 @@ package com.ables.booksellers.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.ResultPath;
 import org.apache.struts2.convention.annotation.Results;
@@ -17,7 +16,7 @@ import org.apache.struts2.convention.annotation.Results;
  * @author ables
  */
 //@Namespace("admin")
-@ResultPath("/WEB-INF/views/jsp/admin/")
+@ResultPath("/WEB-INF/views/jsp/")
 @Results({@Result(location = "admin.jsp",name = "success")
 })
 
