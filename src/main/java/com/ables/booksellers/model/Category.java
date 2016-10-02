@@ -32,8 +32,8 @@ public class Category implements Serializable{
     Long id;
     @Column(unique = true)
     private String name;
-    private SimpleDateFormat createdDate;
-    private SimpleDateFormat updatedDate;
+    private String createdDate;
+    private String updatedDate;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(joinColumns = @JoinColumn(name="Category_id"),inverseJoinColumns = @JoinColumn(name="Book_id"))
     private Set<Book> books = new HashSet<>();
@@ -62,19 +62,19 @@ public class Category implements Serializable{
         this.name = name;
     }
 
-    public SimpleDateFormat getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(SimpleDateFormat createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 
-    public SimpleDateFormat getUpdatedDate() {
+    public String getUpdatedDate() {
         return updatedDate;
     }
 
-    public void setUpdatedDate(SimpleDateFormat updatedDate) {
+    public void setUpdatedDate(String updatedDate) {
         this.updatedDate = updatedDate;
     }
 
