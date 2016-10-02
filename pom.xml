@@ -144,6 +144,13 @@
 	<artifactId>struts2-convention-plugin</artifactId>
 	<version>2.3.20</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.jgeppert.struts2.jquery/struts2-jquery-plugin -->
+<dependency>
+    <groupId>com.jgeppert.struts2.jquery</groupId>
+    <artifactId>struts2-jquery-plugin</artifactId>
+    <version>3.7.1</version>
+</dependency>
+
     </dependencies>
 
     <build>

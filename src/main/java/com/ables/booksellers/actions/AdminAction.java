@@ -16,7 +16,7 @@ import org.apache.struts2.convention.annotation.Results;
  * @author ables
  */
 //@Namespace("admin")
-@ResultPath("/WEB-INF/views/jsp/")
+@ResultPath("/WEB-INF/views/jsp/admin/")
 @Results({@Result(location = "admin.jsp",name = "success")
 })
 

@@ -5,6 +5,7 @@
 --%>
 
 <%@taglib  uri="/struts-tags" prefix="s" %>
+<%@taglib uri="/struts-jquery-tags" prefix="sj" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,13 +16,23 @@
     <body>
         <div>
             <div>
-                <ol>
+                <ul>
                     <li>
-                        <s:url action="newBook.action" var="newbook"/>
-                        <s:set var=
+                        <s:url action="act" var="newbook">
+                            <s:param name="type">form</s:param>
+                        </s:url>
                         <s:a href="%{newbook}">New Book</s:a>
                     </li>
-                </ol>
+                    
+                    <li>
+                    <s:url action="cat" var="newcategory">
+                        <s:param name="type">form</s:param>
+                    </s:url>
+                    <s:a href="%{newcategory}">New Category</s:a>
+                    </li>
+                    <li>
+                    </li>
+                </ul>
             </div>
         </div>
     </body>

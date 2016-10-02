@@ -19,12 +19,20 @@ import org.apache.struts2.convention.annotation.ResultPath;
 public class NewBookAction extends ActionSupport{
  private String type;
     
-    @Action("/newbook")
-    public String newbook(){
-    return SUCCESS;
-    }
+//    @Action("/newbook")
+//    public String newbook(){
+//    return SUCCESS;
+//    }
 
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String execute(){
+        System.out.println("print success");
+        return SUCCESS;
+    }
+    
+   
 }
