@@ -6,7 +6,7 @@
 package com.ables.booksellers.model;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -36,10 +36,13 @@ public class Book implements Serializable{
     private double price;
     private double oldPrice;
     private boolean active;
-    private SimpleDateFormat createDate;
-    private SimpleDateFormat updateDate;
+    private String createdDate;
+    private String updatedDate;
+    private String releasedDate;
+    private LocalDateTime createdDatel;
+    private LocalDateTime updatedDateL;
     private String about;
-    private SimpleDateFormat releaseDate;
+    private LocalDateTime releasedDateL;
     private String imageLocation;
     private int quantityOrdered;
     private int quantityInStock;
@@ -122,20 +125,20 @@ public class Book implements Serializable{
         this.active = active;
     }
 
-    public SimpleDateFormat getCreateDate() {
-        return createDate;
+    public LocalDateTime getCreatedDatel() {
+        return createdDatel;
     }
 
-    public void setCreateDate(SimpleDateFormat createDate) {
-        this.createDate = createDate;
+    public void setCreatedDatel(LocalDateTime createdDatel) {
+        this.createdDatel = createdDatel;
     }
 
-    public SimpleDateFormat getUpdateDate() {
-        return updateDate;
+    public LocalDateTime getUpdatedDateL() {
+        return updatedDateL;
     }
 
-    public void setUpdateDate(SimpleDateFormat updateDate) {
-        this.updateDate = updateDate;
+    public void setUpdatedDateL(LocalDateTime updatedDateL) {
+        this.updatedDateL = updatedDateL;
     }
 
     public String getAbout() {
@@ -146,12 +149,12 @@ public class Book implements Serializable{
         this.about = about;
     }
 
-    public SimpleDateFormat getReleaseDate() {
-        return releaseDate;
+    public LocalDateTime getReleasedDateL() {
+        return releasedDateL;
     }
 
-    public void setReleaseDate(SimpleDateFormat releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setReleasedDateL(LocalDateTime releasedDateL) {
+        this.releasedDateL = releasedDateL;
     }
 
     public String getImageLocation() {
@@ -243,4 +246,28 @@ public int hashCode() {
 	result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
 	return result;
 }
+
+    public String getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public String getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(String updatedDate) {
+        this.updatedDate = updatedDate;
+    }
+
+    public String getReleasedDate() {
+        return releasedDate;
+    }
+
+    public void setReleasedDate(String releasedDate) {
+        this.releasedDate = releasedDate;
+    }
 }

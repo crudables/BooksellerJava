@@ -16,14 +16,14 @@
     <body>
         <div>
             <div>
-                <s:form method="post" action="act">
+                <s:form method="post" action="book">
                     <s:hidden name="type" value="submit" />
-                    <s:textfield name="title" label="Title" labelposition="left"/>
-                    <s:textfield name="author" label="Author" />
-                    <s:textfield name="isbn" label="ISBN"/>
-                    <s:textfield name="publisher" label="Publisher"/>
-                    <s:textfield name="price" label="Price"  maxlength="4"/>
-                    <s:textfield name="oldPrice" label="Old Price" maxLength="4" />
+                    <s:textfield name="title" label="Title" labelposition="left" size="50"/>
+                    <s:textfield name="author" label="Author" size="50" />
+                    <s:textfield name="isbn" label="ISBN" size="15"/>
+                    <s:textfield name="publisher" label="Publisher" size="30"/>
+                    <s:textfield name="price" label="Price"  size="5"/>
+                    <s:textfield name="oldPrice" label="Old Price" size="5" />
                     <s:textfield name="ordered" label="Quanity Ordered"/>
                     <s:textfield name="instock" label="Quanitty in Stock"/>
                     <s:select name="lang" label="Language" list="{'Language','English','French','Spanish'}" />

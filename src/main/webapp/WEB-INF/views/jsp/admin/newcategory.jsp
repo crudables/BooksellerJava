@@ -19,8 +19,8 @@
                 <s:form action="cat" method="post">
                     <s:hidden name="type" value="submit" />
                     <s:textfield name="cat.name" label="Category" key="category.name" size="10"/>
-                    <sj:datepicker name="cat.createdDate" label="Created Date" displayFormat="dd/mm/yy" size="4"/>
-                    <sj:datepicker name="cat.updatedDate" label="Updated Date" displayFormat="dd/mm/yy" size="4" />
+                    <sj:datepicker name="cat.createdDate" label="Created Date" displayFormat="dd/mm/yy" size="4" timepicker="true"/>
+                    <sj:datepicker name="cat.updatedDate" label="Updated Date" displayFormat="dd/mm/yy" size="4" timepicker="true" />
                     <s:submit  name="save" value="Save"/>
                 </s:form>
             </s:div>

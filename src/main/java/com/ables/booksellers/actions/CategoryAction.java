@@ -6,13 +6,17 @@
 package com.ables.booksellers.actions;
 
 import com.ables.booksellers.model.Category;
+import com.ables.booksellers.service.PersistenceService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.conversion.annotations.Conversion;
-import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.ResultPath;
 import org.apache.struts2.convention.annotation.Results;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -29,6 +33,9 @@ public class CategoryAction extends ActionSupport{
     private Category cat;
     private String type;
     private String result;
+    private List<Category> categories;
+    @Autowired
+    private PersistenceService ps;
     public String execute(){
         System.out.println("type is "+type);
         switch(type){
@@ -38,12 +45,13 @@ public class CategoryAction extends ActionSupport{
             break;
             case "showcategory":
                 System.out.println("showing all categories");
+                categories = ps.fetchAllCategory();
                 result = "showall";
                 break;
             case "submit":
                 System.out.println("Submitting form");
-                System.out.println("name is "+cat.getName());
-                System.out.println("created on "+cat.getCreatedDate());
+                makeLocalDate();
+                ps.createCategory(cat);
                 result = "showcategory";
                 break;
         }
@@ -61,8 +69,25 @@ public class CategoryAction extends ActionSupport{
     public Category getCat() {
         return cat;
     }
-    @TypeConversion(converter = "com.ables.booksellers.util.StringToDateTimeConverter")
     public void setCat(Category cat) {
         this.cat = cat;
+    }
+    
+    private void makeLocalDate(){
+        DateTimeFormatter formatte = DateTimeFormatter.ofPattern("dd/mm/yy");
+        LocalDateTime createdDate = LocalDateTime.parse(getCat().getCreatedDate(), formatte);
+        LocalDateTime updatedDate = LocalDateTime.parse(getCat().getUpdatedDate(), formatte);
+        
+        getCat().setCreateDateL(createdDate);
+        getCat().setUpdatedDateL(updatedDate);
+        
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 }

@@ -6,7 +6,6 @@
 package com.ables.booksellers.model;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -33,6 +32,8 @@ public class Category implements Serializable{
     @Column(unique = true)
     private String name;
     private String createdDate;
+    private LocalDateTime createDateL;
+    private LocalDateTime updatedDateL;
     private String updatedDate;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(joinColumns = @JoinColumn(name="Category_id"),inverseJoinColumns = @JoinColumn(name="Book_id"))
@@ -116,4 +117,20 @@ public int hashCode() {
 	result = prime * result + ((name == null) ? 0 : name.hashCode());
 	return result;
 }
+
+    public LocalDateTime getCreateDateL() {
+        return createDateL;
+    }
+
+    public void setCreateDateL(LocalDateTime createDateL) {
+        this.createDateL = createDateL;
+    }
+
+    public LocalDateTime getUpdatedDateL() {
+        return updatedDateL;
+    }
+
+    public void setUpdatedDateL(LocalDateTime updatedDateL) {
+        this.updatedDateL = updatedDateL;
+    }
 }

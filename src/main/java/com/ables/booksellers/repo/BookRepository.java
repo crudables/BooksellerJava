@@ -6,7 +6,7 @@
 package com.ables.booksellers.repo;
 
 import com.ables.booksellers.model.Book;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -23,8 +23,9 @@ public interface BookRepository extends CrudRepository<Book, Long>{
  public List<Book> findByAuthor(String author);
  public List<Book> findByPublisher(String publisher);
  public Book findByIsbn(String isbn);
- public List<Book> findByReleaseDate(SimpleDateFormat date);
+ public List<Book> findByReleasedDate(LocalDateTime date);
  public List<Book> findByCategory(String category);
+ public List<Book> findByCreatedDate(LocalDateTime date);
 // public List<Book> findAllBooks();
  
 } 
