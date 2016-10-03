@@ -15,11 +15,12 @@
     <body>
         <div>
             <div>
-                <s:iterator value="categories">
+                <p>List of Categories</p>
+                <s:iterator value="categories" var="category">
                     <s:if test="#categories == null">
                         <p>The category list is empty</p>
                     </s:if>
-                    <s:property value="#categories.name" />
+                    <s:property value="#category.name" />
                 </s:iterator>
             </div>
         </div>

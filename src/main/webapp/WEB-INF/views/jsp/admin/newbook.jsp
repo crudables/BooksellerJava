@@ -30,7 +30,7 @@
                     <s:checkbox label="Active" name="active"/>
                     <sj:datepicker  name="createddate" displayFormat="dd-mm-yy" label="Created Date"/>
                     <sj:datepicker name="updateddate" displayFormat="dd-mm-yy" label="Updated Date" />
-                    <sj:datepicker name="releaseddate" displayFormat="dd-mm-yy" label="Released Date" />
+                    <sj:datepicker name="releaseddate" displayFormat="dd-mm-yy" label="Released Date"  />
                     
                     <s:textarea name="about" label="About" />
                     <s:submit value="Submit" />
