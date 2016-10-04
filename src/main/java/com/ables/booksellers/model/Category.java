@@ -18,6 +18,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import org.springframework.data.annotation.Version;
 
 /**
  *
@@ -27,7 +28,7 @@ import javax.persistence.ManyToMany;
 public class Category implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Category_id")
+    @Version
     Long id;
     @Column(unique = true)
     private String name;

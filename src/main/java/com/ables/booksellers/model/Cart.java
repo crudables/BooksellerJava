@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import org.springframework.data.annotation.Version;
 
 /**
  *
@@ -23,6 +24,7 @@ public class Cart implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Version
     private Long id;
 //    @MapKey()
 //    private Map<String, Book> map = new HashMap<>();

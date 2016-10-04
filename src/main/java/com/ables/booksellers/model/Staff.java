@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import org.springframework.data.annotation.Version;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Staff implements Serializable{
     
   @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Version
     Long id;
    private  String firstName;
    private String lastName;

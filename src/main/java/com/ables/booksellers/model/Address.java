@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.springframework.data.annotation.Version;
 
 /**
  *
@@ -20,6 +21,7 @@ import javax.persistence.Id;
 public class Address implements Serializable{
     @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
+    @Version
     private Long id;
     @Column(unique = true)
     private String email;

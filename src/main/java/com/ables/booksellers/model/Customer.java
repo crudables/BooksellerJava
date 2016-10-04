@@ -16,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import org.springframework.data.annotation.Version;
 
 /**
  *
@@ -25,6 +26,7 @@ import javax.persistence.OneToOne;
 public class Customer implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Version
    private Long id;
      private String firstName;
     private String lastName;
